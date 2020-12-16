@@ -17,6 +17,8 @@
 
 	<!-- CSS
     ================================================== -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
    <link rel="stylesheet" href="css/default.css">
 	<link rel="stylesheet" href="css/layout.css">
    <link rel="stylesheet" href="css/media-queries.css">
@@ -43,7 +45,7 @@
          <a class="mobile-btn" href="#nav-wrap" title="Show navigation">Show navigation</a>
 	      <a class="mobile-btn" href="#" title="Hide navigation">Hide navigation</a>
 
-         <ul id="nav" class="nav">
+         <ul id="nav" class="nav justify-content-center">
             <li class="current"><a class="smoothscroll" href="#home">Home</a></li>
             <li><a class="smoothscroll" href="#about">About</a></li>
 	         <li><a class="smoothscroll" href="#resume">Resume</a></li>
@@ -56,7 +58,7 @@
       <div class="row banner">
          <div class="banner-text">
             <h1 class="responsive-headline">I'm Nicholas Gibson.</h1>
-            <h3>FULL STACK WEB DEVELOPER LOOKING TO JOIN AND CONTRIBUTE TO THE SUCCESS AND CULTURE OF THE COMPANY. <a class="smoothscroll" href="#about">about me</a>.</h3>
+            <h3>FULL STACK WEB DEVELOPER LOOKING TO JOIN AND CONTRIBUTE TO THE SUCCESS AND CULTURE OF THE COMPANY. <a class="smoothscroll" href="#about"></a>.</h3>
             <hr />
             <ul class="social">
                <li><a href="https://www.linkedin.com/in/nicholas-gibson-674a991b5"><i class="fa fa-linkedin"></i></a></li>
@@ -187,22 +189,21 @@
       ----------------------------------------------- -->
       <div class="row skill">
 
-         <div class="header-col">
+         <div class="three columns header-col">
             <h1><span>Skills</span></h1>
          </div>
 
          <div class="main-col">
 
-            <p>Skills include working well in groups, effectively communicating, and 
-            </p>
 
 				<div>
 				   <ul class="skills">
-					   <li><span ></span><em>C#</em></li>
+					   <br><li><span ></span><em>C#</em></li>
                   <li><span class="bar-expand"></span><em>JavaScript</em></li>
 						<li><span class="bar-expand"></span><em>.Net</em></li>
 						<li><span class="bar-expand"></span><em>CSS</em></li>
-						<li><span class="bar-expand"></span><em>HTML5</em></li>
+                  <li><span class="bar-expand"></span><em>HTML5</em></li>
+                  <div class="w-100"></div>
                   <li><span class="bar-expand"></span><em>React</em></li>
                   <li><span class="bar-expand"></span><em>AWS</em></li>
                   <li><span class="bar-expand"></span><em>RESTful API</em></li>
@@ -226,14 +227,15 @@
    ================================================== -->
    <section id="portfolio">
 
-      <div class="row">
-
-         <div class="twelve columns collapsed">
 
             <h1>Projects</h1>
 
             <!-- portfolio-wrapper -->
             <div id="portfolio-wrapper" class="bgrid-quarters s-bgrid-thirds cf">
+               <div class="container">
+
+               <div class="row">
+                  <div class="col">
 
                   <div class="item-wrap">
 
@@ -245,15 +247,16 @@
           					   </div>
                         </div>
                      </a>
-
                   </div>
-                </div> <!-- item end -->
 
+                 <!-- item end -->
+
+                <div class="col">
 
                   <div class="item-wrap">
 
                      <a href="#modal-02" title="">
-                        <img alt="" src="images/account.png" width="400" height="300>
+                        <img alt="" src="images/account.png" width="400" height="300">
                         <div class="overlay">
                            <div class="portfolio-item-meta">
           					      <h5>Account Owner Server</h5>
@@ -261,26 +264,25 @@
           					   </div>
                         </div>
                      </a>
+              </div></div> <!-- item end -->
+              <div class="w-100"></div>
 
-                  </div>
-          		</div> <!-- item end -->
-
-               <div class="columns portfolio-item">
+               <div class="col">
                   <div class="item-wrap">
 
                      <a href="#modal-03" title="">
-                        <div style="clear: right">   <img alt="" src="images/bank.png" style="float: right" width="400" height="300">
+                       <img alt="" src="images/bank.png" right="" width="400" height="300">
                            <div class="portfolio-item-meta">
           					      <h5>Nick's Bank</h5>
                               <p>A personal banking web app with Plaid and the MERN stack</p>
-                           </div></div>
                         </div>
+                     </div>
                      </a>
 
                   </div>
-          		</div> <!-- item end -->
+          		 <!-- item end -->
 
-               <div class="columns portfolio-item">
+               <div class="col">
                   <div class="item-wrap">
 
                      <a href="#modal-04" title="">
@@ -293,7 +295,9 @@
 
                   </div>
                 </div> <!-- item end -->
-                
+                <div class="w-100"></div>
+
+               
 
                <!-- <div class="columns portfolio-item">
                   <div class="item-wrap">
