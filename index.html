@@ -26,12 +26,33 @@
 
    <!-- Script
    ================================================== -->
-	<script src="js/modernizr.js"></script>
+   <script src="js/modernizr.js"></script>
+   
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
    <!-- Favicons
 	================================================== -->
 	<link rel="shortcut icon" href="favicon.png" >
 
+   <script>function submitToAPI(e) {
+      e.preventDefault();
+      var URL = "https://k7o0uloyl5.execute-api.us-east-1.amazonaws.com/live";
+
+           var Namere = /[A-Za-z]{1}[A-Za-z]/;
+           if (!Namere.test($("#name-input").val())) {
+                        alert ("Name can not less than 2 char");
+               return;
+           }
+           var mobilere = /[0-9]{10}/;
+           if (!mobilere.test($("#phone-input").val())) {
+               alert ("Please enter valid mobile number");
+               return;
+           }
+           if ($("#email-input").val()=="") {
+               alert ("Please enter your email id");
+               return;
+           } </script>
+         
 </head>
 
 <body>
@@ -39,7 +60,7 @@
    <!-- Header
    ================================================== -->
    <header id="home">
-
+      
       <nav id="nav-wrap">
 
          <a class="mobile-btn" href="#nav-wrap" title="Show navigation">Show navigation</a>
@@ -112,7 +133,7 @@
 
                <div class="columns ">
                   <p>
-                     <a href="https://drive.google.com/file/d/1RVIV7q_tjdwxlGUY3a0WRZ4Ukupi6zTg/view?usp=sharing" class="button"><i class="fa fa-download"></i>View Resume</a>
+                     <a href="https://drive.google.com/file/d/1R8BFW4ST2w5Ox9pM7IdRYOkd_9Kcm2rN/view?usp=sharing" class="button"><i class="fa fa-download"></i>View Resume</a>
                   </p>
                </div>
 
@@ -539,40 +560,28 @@
          <div class="row">
 
             <div class="eight columns">
-
+            
                <!-- form -->
-               <form action="sendEmail.php" method="post" id="contactForm" name="contactForm">
-					<fieldset>
-
-                  <div>
-						   <label for="contactName">Name <span class="required">*</span></label>
-						   <input type="text" value="" size="35" id="contactName" name="contactName">
+               <form id="contact-form" method="post">
+                  <div class="form-group">
+                   <h4>Name:</h4>
+                   <input type="text" id="name-input" placeholder="Name..." class="form-control" />
                   </div>
-
-                  <div>
-						   <label for="contactEmail">Email <span class="required">*</span></label>
-						   <input type="text" value="" size="35" id="contactEmail" name="contactEmail">
+                  <div class="form-group">
+                   <h4>Phone:</h4>
+                   <input type="phone" id="phone-input" placeholder="Phone..." class="form-control" />
                   </div>
-
-                  <div>
-						   <label for="contactSubject">Subject</label>
-						   <input type="text" value="" size="35" id="contactSubject" name="contactSubject">
+                  <div class="form-group">
+                   <h4>Email:</h4>
+                   <input type="email" id="email-input" placeholder="Email..." class="form-control" />
                   </div>
-
-                  <div>
-                     <label for="contactMessage">Message <span class="required">*</span></label>
-                     <textarea cols="50" rows="15" id="contactMessage" name="contactMessage"></textarea>
+                  <div class="form-group">
+                   <h4>Message:</h4>
+                   <textarea id="description-input" rows="3" placeholder="Message…" class="form-control" ></textarea>
                   </div>
-
-                  <div>
-                     <button class="submit">Submit</button>
-                     <span id="image-loader">
-                        <img alt="" src="images/loader.gif">
-                     </span>
-                  </div>
-
-					</fieldset>
-				   </form> <!-- Form End -->
+                  <div class="g-recaptcha" data-sitekey="YOUR_GOOGLE_RECAPTCHA_KEY" class="form-control"></div>
+                  <button type="submit" onClick="submitToAPI(event)" class="btn btn-primary">Submit</button>
+                 </form>
 
                <!-- contact-warning -->
                <div id="message-warning"> Error boy</div>
@@ -582,6 +591,7 @@
 				   </div>
 
             </div>
+            
 
 
             <aside class="four columns footer-widgets">
@@ -640,5 +650,5 @@
    <script src="js/init.js"></script>
 
 </body>
-
-</html>
+   
+</html> 
